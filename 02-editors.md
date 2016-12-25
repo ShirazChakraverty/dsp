@@ -60,7 +60,7 @@ We will also use Jupyter (IPython) notebooks, but this does not remove the need 
 
 What terminal editor will you use? How did you make your decision?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> vim. Have used vi editor a while back and this seems like an obvious choice for me, given past fimiliarity.
 
 --
 
@@ -68,6 +68,6 @@ What terminal editor will you use? How did you make your decision?
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Spyder as it gies the file editor, console and output windows all in one application. Have also used Canopy. Have not done much work on Spyder yet. Will update this page with details shortly with learnings.
 
  
