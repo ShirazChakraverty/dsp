@@ -48,13 +48,13 @@ cross-platform.
 
 Did you install Python 2 or 3? Why?  
 
->> installed Python 2 in order to keep it easier to follow along with bootcamp content.
+>> installed **Python 2** in order to keep it easier to follow along with bootcamp content.
 
 ###Q2. Which Python Version Installed   
 
 How can you check the version of Python installed if you happen to be on an unfamiliar computer?
 
->> Just type python on command line and the shell responds with the version.
+>> Just type _python_ on command line and the shell responds with the version.
 
  
 
