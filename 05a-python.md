@@ -12,7 +12,7 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> A tuple is one dimensional, fixed length and immutable sequence. A list is variable length and mutable, contents can be easily modified.
 
 ---
 
@@ -20,7 +20,27 @@ How are Python lists and tuples similar and different? Which will work as keys i
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Set is unordered collection of unique elements, like the keys in a dictionary. 
+
+Set usage:
+
+a = {1,2,3,4,5}
+b = { 8,9,3,5}
+
+a & b # intersection
+
+output : set([3,5])
+
+List usage:
+
+a_list = [0,1,3,4,5,6,5,4,4,3,3,3,3,4,4,5,6,2,3,4]
+
+2 in a_list
+
+output : True
+
+Sets are faster for simply finding an element as their structure only allows for a unique set of elements.
+
 
 ---
 
@@ -28,7 +48,14 @@ How are Python lists and sets similar and different? Give examples of using both
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> simple use of lambda : sort this unsorted baby names list based on length of the name:
+
+baby_names = ["martha","tom","rumpelstiltskin","john","joseph",]
+
+baby_names = sorted(baby_names,key=lambda x: len(set(list(x))))
+
+baby_names
+Out[18]: ['tom', 'john', 'martha', 'joseph', 'rumpelstiltskin']
 
 ---
 
@@ -36,7 +63,7 @@ Describe Python's `lambda`. What is it, and what is it used for? Give at least o
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+placed code in this file: [q4_examples](python/q4_examples.py)
 
 ---
 
@@ -51,7 +78,7 @@ date_start = '01-02-2013'
 date_stop = '07-28-2015'
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
+>> number of days: 937
 
 b.  
 ```
@@ -59,7 +86,7 @@ date_start = '12312013'
 date_stop = '05282015'  
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
+>> number of days: 513
 
 c.  
 ```
@@ -67,7 +94,7 @@ date_start = '15-Jan-1994'
 date_stop = '14-Jul-2015'  
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE  (answer will be in number of days)
+>> number of days: 7850
 
 Place code in this file: [q5_datetime.py](python/q5_datetime.py)
 
