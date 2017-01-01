@@ -8,7 +8,7 @@ def donuts(count):
     form 'Number of donuts: <count>', where <count> is the number
     passed in. However, if the count is 10 or more, then use the word
     'many' instead of the actual count.
-
+    
     >>> donuts(4)
     'Number of donuts: 4'
     >>> donuts(9)
@@ -18,7 +18,13 @@ def donuts(count):
     >>> donuts(99)
     'Number of donuts: many'
     """
-    raise NotImplementedError
+    if isinstance(count,int) is True:
+        if count < 10:
+            return "Number of donuts: ",count
+        else:
+            return "Number of donuts: many"
+    else:
+        raise NotImplementedError("Count of donuts must be a number")
 
 
 def both_ends(s):
@@ -37,7 +43,13 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
+    if isinstance(s,str) is True:
+        if len(s) > 2:
+            return s[0]+s[1]+s[len(s)-1]+s[len(s)-2]
+        else:
+            return ""
+    else:
+        raise NotImplementedError("Please enter a valid string")
 
 
 def fix_start(s):
@@ -56,7 +68,23 @@ def fix_start(s):
     >>> fix_start('donut')
     'donut'
     """
-    raise NotImplementedError
+    if isinstance(s,str) is True:
+        if len(s) > 1:
+            x = 1
+            s1 = s[0]
+            while x < len(s):
+                if s[x] == s[0]:
+                    s1 = s1 + "*"
+                    x = x + 1
+                else:
+                    s1 = s1 + s[x]
+                    x = x + 1
+            return s1
+        else:
+            return ""
+    else:
+        raise NotImplementedError("Please enter a valid string")
+
 
 
 def mix_up(a, b):
@@ -74,7 +102,13 @@ def mix_up(a, b):
     >>> mix_up('pezzy', 'firm')
     'fizzy perm'
     """
-    raise NotImplementedError
+    if isinstance(a,str) and isinstance(b,str) is True:
+        if len(a) > 1 and len(b) > 1:
+            return b[0:2]+a[2:len(a)]+" "+a[0:2]+b[2:len(b)]
+        else:
+            return ""
+    else:
+        raise NotImplementedError("Please enter two strings at least 2 characters long")
 
 
 def verbing(s):
@@ -91,7 +125,17 @@ def verbing(s):
     >>> verbing('do')
     'do'
     """
-    raise NotImplementedError
+    if isinstance(s,str) is True:
+        if len(s) > 2:
+            string = s[(len(s)-3):len(s)]
+            if string <> "ing":
+                return s + "ing"
+            if string == "ing":
+                return s + "ly"
+        else:
+            return s
+    else:
+        raise NotImplementedError("Please enter  a string")
 
 
 def not_bad(s):
@@ -111,8 +155,15 @@ def not_bad(s):
     >>> not_bad("It's bad yet not")
     "It's bad yet not"
     """
-    raise NotImplementedError
-
+    if isinstance(s,str) is True:
+        if s.find("not") < s.find("bad"):
+            loc = s.find("not")
+            s2 = s[0:loc] + "good"
+            return s2
+        else:
+            return s
+    else:
+        raise NotImplementedError("Please enter  a string")
 
 def front_back(a, b):
     """
@@ -130,4 +181,19 @@ def front_back(a, b):
     >>> front_back('Kitten', 'Donut')
     'KitDontenut'
     """
-    raise NotImplementedError
+    if isinstance(a,str) and isinstance(b,str) is True:
+        if len(a) % 2 == 0:
+            a_front = a[0:(len(a)/2)]
+            a_back = a[(len(a)/2):len(a)]
+        else:
+            a_front = a[0:(len(a)/2)+1]
+            a_back = a[(len(a)/2)+1:len(a)]
+        if len(b) % 2 == 0:
+            b_front = b[0:(len(b)/2)]
+            b_back = b[(len(b)/2):len(b)]
+        else:
+            b_front = b[0:(len(b)/2)+1]
+            b_back = b[(len(b)/2)+1:len(b)]
+        return a_front + b_front + a_back + b_back
+    else:
+        raise NotImplementedError("Please enter two strings at least 2 characters long")

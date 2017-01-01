@@ -15,7 +15,20 @@ def match_ends(words):
     >>> match_ends(['aaa', 'be', 'abc', 'hello'])
     1
     """
-    raise NotImplementedError
+    if isinstance(words,list) is True:
+        elements = len(words)
+        counter = int(0)
+        total = int(0)
+        while elements > counter:
+            s = words[counter]
+            if len(words[counter]) > 1 and s[0] == s[len(s)-1]:
+                total = total + 1
+                counter = counter + 1
+            else:
+                counter = counter + 1
+        return total
+    else:
+        raise NotImplementedError("Only accepts a valid list of strings")
 
 
 def front_x(words):
@@ -32,7 +45,19 @@ def front_x(words):
     >>> front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark'])
     ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
     """
-    raise NotImplementedError
+    if isinstance(words,list) is True:
+        words.sort()
+        sorted_words = []
+        for element in words:
+            s = element
+            if s[0] == 'x':
+                sorted_words.append(s)
+        words = [x for x in words if x not in sorted_words]
+        words.sort()
+        sorted_words = sorted_words + words
+        return sorted_words           
+    else:
+        raise NotImplementedError("Only accepts a valid list of strings")
 
 
 def sort_last(tuples):
@@ -49,7 +74,11 @@ def sort_last(tuples):
     >>> sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
     [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
     """
-    raise NotImplementedError
+    if isinstance(tuples,list) is True:
+        tuples1 = sorted(tuples, key= lambda x: x[-1])
+        return tuples1
+    else:
+        raise NotImplementedError("Only accepts a valid list of strings")
 
 
 def remove_adjacent(nums):
@@ -68,8 +97,16 @@ def remove_adjacent(nums):
     >>> remove_adjacent([])
     []
     """
-    raise NotImplementedError
-
+    if isinstance(nums,list) is True:
+        i = 0
+        while len(nums) > (i+1): 
+            if nums[i] == nums[i+1]:
+                nums.pop(i+1)
+            else:
+                i = i + 1
+        return nums
+    else:
+        raise NotImplementedError("Only accepts a valid list of strings")
 
 def linear_merge(list1, list2):
     """
@@ -85,4 +122,9 @@ def linear_merge(list1, list2):
     >>> linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
     ['aa', 'aa', 'aa', 'bb', 'bb']
     """
-    raise NotImplementedError
+    if isinstance(list1,list) is True and isinstance(list2,list) is True:
+        list3 = list1 + list2
+        list3.sort()
+        return list3
+    else:
+        raise NotImplementedError("Only accepts a valid list of strings")
