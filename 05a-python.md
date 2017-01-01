@@ -12,7 +12,7 @@ For quick and easy interactive practice with Python, many people enjoy [Codecade
 
 How are Python lists and tuples similar and different? Which will work as keys in dictionaries? Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> A tuple is one dimensional, fixed length and immutable sequence. A list is variable length and mutable, contents can be easily modified.
 
 ---
 
@@ -20,7 +20,27 @@ How are Python lists and tuples similar and different? Which will work as keys i
 
 How are Python lists and sets similar and different? Give examples of using both. How does performance compare between lists and sets for finding an element. Why?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> Set is unordered collection of unique elements, like the keys in a dictionary. 
+
+Set usage:
+
+a = {1,2,3,4,5}
+b = { 8,9,3,5}
+
+a & b # intersection
+
+output : set([3,5])
+
+List usage:
+
+a_list = [0,1,3,4,5,6,5,4,4,3,3,3,3,4,4,5,6,2,3,4]
+
+2 in a_list
+
+output : True
+
+Sets are faster for simply finding an element as their structure only allows for a unique set of elements.
+
 
 ---
 
@@ -28,7 +48,14 @@ How are Python lists and sets similar and different? Give examples of using both
 
 Describe Python's `lambda`. What is it, and what is it used for? Give at least one example, including an example of using a `lambda` in the `key` argument to `sorted`.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> simple use of lambda : sort this unsorted baby names list based on length of the name:
+
+baby_names = ["martha","tom","rumpelstiltskin","john","joseph",]
+
+baby_names = sorted(baby_names,key=lambda x: len(set(list(x))))
+
+baby_names
+Out[18]: ['tom', 'john', 'martha', 'joseph', 'rumpelstiltskin']
 
 ---
 
@@ -36,7 +63,105 @@ Describe Python's `lambda`. What is it, and what is it used for? Give at least o
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> # example of a list comprehension to change the list based on a simple condition
+print "LIST EXAMPLES FOR COMPREHENSION, MAP, and FILTER"
+print "Example of list comprehension"
+baby_names = ["martha","tom","rumpelstiltskin","john","joseph",]
+print baby_names
+baby_names = [names.upper() for names in baby_names if len(names) > 4]
+print baby_names
+
+#example of using map
+print "Example of Map function"
+baby_names = ["martha","tom","rumpelstiltskin","john","joseph",]
+print baby_names
+baby_length = map(lambda value: len(value), baby_names)
+print baby_length
+
+#example of using map
+print "Example of filter function returning names with odd number of characters"
+baby_names = ["martha","tom","rumpelstiltskin","john","joseph",]
+print baby_names
+baby_length = filter(lambda value: len(value) % 2 == 1, baby_names)
+print baby_length
+print "End of List examples"
+
+# example of a set comprehension to change the list based on a simple condition
+print "SET EXAMPLES FOR COMPREHENSION, MAP, and FILTER"
+print "Example of Set comprehension"
+baby_names_set = ("martha","tom","rumpelstiltskin","john","joseph")
+print baby_names_set
+baby_names_set_rev = (names.upper() for names in baby_names if len(names) > 4)
+print baby_names_set_rev
+
+#example of using map
+print "Example of Set Map function"
+baby_names_set2 = ("martha","tom","rumpelstiltskin","john","joseph")
+print baby_names_set2
+baby_name_length_set3 = map(lambda value: len(value), baby_names)
+print "Name lengths in set:", baby_name_length_set3
+
+#example of using map
+print "Example of Set filter function returning names with odd number of characters"
+baby_names_set4 = ("martha","tom","rumpelstiltskin","john","joseph")
+print baby_names_set4
+baby_names_set5 = filter(lambda value: len(value) % 2 == 1, baby_names_set4)
+print baby_names_set5
+
+
+# example of a dict comprehension to change the list based on a simple condition
+print "DICTIONARY EXAMPLES FOR COMPREHENSION, MAP, and FILTER"
+print "Example of Dictionary comprehension"
+baby_names_dict = {1:"martha",2:"tom",3:"rumpelstiltskin",4:"john",5:"joseph"}
+print baby_names_dict
+baby_names_dict = {v for k,v in baby_names_dict.items() if len(v) > 4}
+print baby_names_dict
+
+#example of using map
+print "Example of DICT with a Map function"
+baby_names_dict = ["martha","tom","rumpelstiltskin","john","joseph",]
+print baby_names_dict
+baby_length = map(lambda v: len(v), baby_names_dict)
+print baby_length
+
+#example of using map
+print "Example of DICT filter function returning names with odd number of characters"
+baby_names_dict = ["martha","tom","rumpelstiltskin","john","joseph",]
+print "All baby names:", baby_names_dict
+baby_names_odd = filter(lambda v: len(v) % 2 == 1, baby_names_dict)
+print "Only with odd characters:", baby_names_odd
+[output]
+LIST EXAMPLES FOR COMPREHENSION, MAP, and FILTER
+Example of list comprehension
+['martha', 'tom', 'rumpelstiltskin', 'john', 'joseph']
+['MARTHA', 'RUMPELSTILTSKIN', 'JOSEPH']
+Example of Map function
+['martha', 'tom', 'rumpelstiltskin', 'john', 'joseph']
+[6, 3, 15, 4, 6]
+Example of filter function returning names with odd number of characters
+['martha', 'tom', 'rumpelstiltskin', 'john', 'joseph']
+['tom', 'rumpelstiltskin']
+End of List examples
+SET EXAMPLES FOR COMPREHENSION, MAP, and FILTER
+Example of Set comprehension
+('martha', 'tom', 'rumpelstiltskin', 'john', 'joseph')
+Example of Set Map function
+('martha', 'tom', 'rumpelstiltskin', 'john', 'joseph')
+Name lengths in set: [6, 3, 15, 4, 6]
+Example of Set filter function returning names with odd number of characters
+('martha', 'tom', 'rumpelstiltskin', 'john', 'joseph')
+('tom', 'rumpelstiltskin')
+DICTIONARY EXAMPLES FOR COMPREHENSION, MAP, and FILTER
+Example of Dictionary comprehension
+{1: 'martha', 2: 'tom', 3: 'rumpelstiltskin', 4: 'john', 5: 'joseph'}
+set(['joseph', 'rumpelstiltskin', 'martha'])
+Example of DICT with a Map function
+['martha', 'tom', 'rumpelstiltskin', 'john', 'joseph']
+[6, 3, 15, 4, 6]
+Example of DICT filter function returning names with odd number of characters
+All baby names: ['martha', 'tom', 'rumpelstiltskin', 'john', 'joseph']
+Only with odd characters: ['tom', 'rumpelstiltskin']
+
 
 ---
 
@@ -51,7 +176,7 @@ date_start = '01-02-2013'
 date_stop = '07-28-2015'
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
+>> number of days: 937
 
 b.  
 ```
@@ -59,7 +184,7 @@ date_start = '12312013'
 date_stop = '05282015'  
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
+>> number of days: 513
 
 c.  
 ```
@@ -67,7 +192,7 @@ date_start = '15-Jan-1994'
 date_stop = '14-Jul-2015'  
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE  (answer will be in number of days)
+>> number of days: 7850
 
 Place code in this file: [q5_datetime.py](python/q5_datetime.py)
 
