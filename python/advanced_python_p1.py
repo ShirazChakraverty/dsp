@@ -20,35 +20,22 @@ for key,val_d in degree_freq.iteritems():
         degree_freq[key] = faculty_data.degree.str.contains(key,case=False).sum()
 # Q1. print the degree frequency in a neat table
 print "Degree","Frequency"
-print "=================="
 sorted_degree = degree_freq.items()
 sorted_degree.sort()
 for k, v in sorted_degree:
      print k,"        ", v
 
 #Q2. The different titles and their frequencies
-print "=================="
-print "Titles and Frequencies"
-print "=================="
-
 titles = faculty_data.groupby(by='title')
-
-print titles.title.count()
+print titles.count()
 
 #Q3. Put the emails in a list and print:
 
-print "=================="
-print "List of Emails of Faculty"
-print "=================="
 email_list = list(faculty_data.email)
 
 print email_list
 
 faculty_data['domains'] = faculty_data['email'].apply(lambda x: x.split('@')[1])
 domains = faculty_data.groupby(by='domains')
-print "=================="
-print "Frequency of Domains"
-print "=================="
-
 print domains.domains.count()
 
