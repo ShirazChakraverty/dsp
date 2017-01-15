@@ -5,8 +5,8 @@
 
 _CohenEffectSize(firsts.totalwgt_lb,others.totalwgt_lb)_
 
--0.088672927072602006
+ Weight in pounds : -0.088672927072602006, or First babies are 1.42 Oz less than Others.
 
 _CohenEffectSize(firsts.prglngth,others.prglngth)_
 
-0.028879044654449883
+Difference in Weeks : 0.028879044654449883, or 4.84 Hours.
