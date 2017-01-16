@@ -2,11 +2,13 @@
 
 
   First babies are lighter than others and mothers of first babies have longer pregnancies than others.
+```python
+CohenEffectSize(firsts.totalwgt_lb,others.totalwgt_lb)
 
-_CohenEffectSize(firsts.totalwgt_lb,others.totalwgt_lb)_
+```
+Weight in pounds : -0.088672927072602006, or First babies are 1.42 Oz less than Others.
 
- Weight in pounds : -0.088672927072602006, or First babies are 1.42 Oz less than Others.
-
-_CohenEffectSize(firsts.prglngth,others.prglngth)_
-
+```python
+CohenEffectSize(firsts.prglngth,others.prglngth)_
+```
 Difference in Weeks : 0.028879044654449883, or 4.84 Hours.
